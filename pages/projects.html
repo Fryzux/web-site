@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты | Портфолио</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">👨‍💻 Иван Петров</div>
+            <nav>
+                <a href="../index.html">Главная</a>
+                <a href="projects.html" class="active">Проекты</a>
+                <a href="diary.html">Дневник</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects-hero">
+            <div class="container">
+                <h1>Мои Проекты</h1>
+                <p>Коллекция моих работ и учебных проектов</p>
+            </div>
+        </section>
+
+        <section class="projects-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="web">Веб-разработка</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                    <button class="filter-btn" data-filter="design">Дизайн</button>
+                    <button class="filter-btn" data-filter="other">Другое</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-category="web">
+                        <img src="../images/project1.jpg" alt="Проект 1">
+                        <div class="project-info">
+                            <h3>Интернет-магазин</h3>
+                            <p>Адаптивный сайт магазина с корзиной</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <button class="details-btn" data-project="1">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="python">
+                        <img src="../images/project2.jpg" alt="Проект 2">
+                        <div class="project-info">
+                            <h3>Анализ данных</h3>
+                            <p>Визуализация данных с NumPy и Matplotlib</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>NumPy</span>
+                                <span>Pandas</span>
+                            </div>
+                            <button class="details-btn" data-project="2">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="web">
+                        <img src="../images/project3.jpg" alt="Проект 3">
+                        <div class="project-info">
+                            <h3>Погодное приложение</h3>
+                            <p>API интеграция для прогноза погоды</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>API</span>
+                                <span>CSS Grid</span>
+                            </div>
+                            <button class="details-btn" data-project="3">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="design">
+                        <img src="../images/project4.jpg" alt="Проект 4">
+                        <div class="project-info">
+                            <h3>UI Kit библиотека</h3>
+                            <p>Переиспользуемые компоненты интерфейса</p>
+                            <div class="project-tags">
+                                <span>Figma</span>
+                                <span>CSS</span>
+                                <span>Design System</span>
+                            </div>
+                            <button class="details-btn" data-project="4">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="python">
+                        <img src="../images/project5.jpg" alt="Проект 5">
+                        <div class="project-info">
+                            <h3>Телеграм-бот</h3>
+                            <p>Автоматизация задач через бота</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Telegram API</span>
+                                <span>SQLite</span>
+                            </div>
+                            <button class="details-btn" data-project="5">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="other">
+                        <img src="../images/project6.jpg" alt="Проект 6">
+                        <div class="project-info">
+                            <h3>Мобильная игра</h3>
+                            <p>Простая аркада на JavaScript</p>
+                            <div class="project-tags">
+                                <span>Canvas API</span>
+                                <span>Game Dev</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <button class="details-btn" data-project="6">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для детальной информации -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Проект">
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-info">
+                        <div class="info-item">
+                            <strong>Технологии:</strong>
+                            <div id="modalTech"></div>
+                        </div>
+                        <div class="info-item">
+                            <strong>Дата:</strong>
+                            <span id="modalDate"></span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Роль:</strong>
+                            <span id="modalRole"></span>
+                        </div>
+                    </div>
+                    <div class="modal-links">
+                        <a href="#" id="githubLink" target="_blank">GitHub</a>
+                        <a href="#" id="liveLink" target="_blank">Демо</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Иван Петров. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/projects.js"></script>
+</body>
+</html>

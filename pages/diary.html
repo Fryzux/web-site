@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный дневник | Портфолио</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">👨‍💻 Иван Петров</div>
+            <nav>
+                <a href="../index.html">Главная</a>
+                <a href="projects.html">Проекты</a>
+                <a href="diary.html" class="active">Дневник</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="diary-hero">
+            <div class="container">
+                <h1>📚 Учебный дневник</h1>
+                <p>Мой путь в разработке и обучении</p>
+            </div>
+        </section>
+
+        <section class="courses-progress">
+            <div class="container">
+                <h2>Текущие курсы</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Web Development Bootcamp</h3>
+                            <span class="course-status active">В процессе</span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-text">75% завершено</span>
+                        </div>
+                        <p>Изучение современных веб-технологий: React, Node.js, MongoDB</p>
+                        <div class="course-stats">
+                            <span>⏱️ 45 часов</span>
+                            <span>📝 12/16 модулей</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Python для анализа данных</h3>
+                            <span class="course-status active">В процессе</span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-text">60% завершено</span>
+                        </div>
+                        <p>NumPy, Pandas, Matplotlib и machine learning</p>
+                        <div class="course-stats">
+                            <span>⏱️ 28 часов</span>
+                            <span>📝 6/10 модулей</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Алгоритмы и структуры данных</h3>
+                            <span class="course-status completed">Завершен</span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill completed" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-text">100% завершено</span>
+                        </div>
+                        <p>Сортировка, поиск, графы, динамическое программирование</p>
+                        <div class="course-stats">
+                            <span>⏱️ 60 часов</span>
+                            <span>📝 20/20 модулей</span>
+                            <span>✅ Сертификат</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diary-entries">
+            <div class="container">
+                <h2>Записи дневника</h2>
+                <div class="entries-timeline">
+                    <div class="entry">
+                        <div class="entry-date">16 октября 2025</div>
+                        <div class="entry-content">
+                            <h3>Создание портфолио сайта</h3>
+                            <p>Сегодня начал работу над личным портфолио. Реализовал главную страницу с адаптивным дизайном, навигацией и анимацией. Использовал CSS Grid и Flexbox для компоновки. Планирую добавить страницу проектов с фильтрацией.</p>
+                            <div class="entry-tags">
+                                <span>#html</span>
+                                <span>#css</span>
+                                <span>#portfolio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-date">12 октября 2025</div>
+                        <div class="entry-content">
+                            <h3>Изучение NumPy и матричных операций</h3>
+                            <p>Разобрался с индексацией многомерных массивов в NumPy. Особенно интересна была работа с срезами matrix[1::2, ::2] и создание шахматных паттернов. Решил несколько задач на сортировку и генерацию случайных матриц.</p>
+                            <div class="entry-tags">
+                                <span>#python</span>
+                                <span>#numpy</span>
+                                <span>#data-science</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-date">5 октября 2025</div>
+                        <div class="entry-content">
+                            <h3>Работа с темами в CSS</h3>
+                            <p>Реализовал переключатель light/dark темы на сайте. Использовал CSS переменные и JavaScript для сохранения выбора в localStorage. Интеграция прошла успешно на всех страницах проекта.</p>
+                            <div class="entry-tags">
+                                <span>#css</span>
+                                <span>#javascript</span>
+                                <span>#ux</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-date">28 сентября 2025</div>
+                        <div class="entry-content">
+                            <h3>Основы Go программирования</h3>
+                            <p>Начал изучать Go. Написал несколько простых программ для обработки пользовательского ввода, вычисления квадратов чисел и математических операций. Отладил несколько синтаксических ошибок компиляции.</p>
+                            <div class="entry-tags">
+                                <span>#golang</span>
+                                <span>#basics</span>
+                                <span>#learning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-date">18 сентября 2025</div>
+                        <div class="entry-content">
+                            <h3>BEM методология в CSS</h3>
+                            <p>Изучил принципы БЭМ для организации стилей. Создал несколько связанных страниц с единообразным стилем. Понял важность правильного именования классов для поддерживаемости кода.</p>
+                            <div class="entry-tags">
+                                <span>#css</span>
+                                <span>#bem</span>
+                                <span>#architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="learning-stats">
+            <div class="container">
+                <h2>Статистика обучения</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">Задач решено</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Курсов пройдено</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-number">320</div>
+                        <div class="stat-label">Часов обучения</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Проектов завершено</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Иван Петров. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/diary.js"></script>
+</body>
+</html>
