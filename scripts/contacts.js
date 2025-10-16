@@ -1,5 +1,5 @@
 const form = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
+const successMessage = document.getElementById('successMessage');
 
 // Валидация email
 const validateEmail = (email) => {
@@ -65,10 +65,8 @@ form.addEventListener('submit', (e) => {
     // Валидация всех полей
     let isFormValid = true;
     formFields.forEach(field => {
-        if (field.hasAttribute('required') || field.value !== '') {
-            if (!validateField(field)) {
-                isFormValid = false;
-            }
+        if (!validateField(field)) {
+            isFormValid = false;
         }
     });
 
@@ -80,20 +78,12 @@ form.addEventListener('submit', (e) => {
         console.log('Отправка данных:', data);
 
         // Показ сообщения об успехе
-        form.style.display = 'none';
-        formSuccess.style.display = 'block';
+        successMessage.style.display = 'block';
+        form.reset();
 
-        // Сброс формы через 3 секунды
+        // Скрытие сообщения через 5 секунд
         setTimeout(() => {
-            form.reset();
-            form.style.display = 'block';
-            formSuccess.style.display = 'none';
-        }, 3000);
-    } else {
-        // Прокрутка к первой ошибке
-        const firstError = form.querySelector('.error');
-        if (firstError) {
-            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+            successMessage.style.display = 'none';
+        }, 5000);
     }
 });

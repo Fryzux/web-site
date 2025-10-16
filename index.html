@@ -4,246 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио студента</title>
+    <link rel="stylesheet" href="styles/styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            min-height: 100vh;
-            box-shadow: 0 0 50px rgba(0,0,0,0.3);
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
+        /* Дополнительные стили для центрирования */
+        .skills-section, .best-projects-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .student-name {
-            font-size: 1.5rem;
-            opacity: 0.9;
-        }
-
-        nav {
-            background: #2d3748;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            background: #667eea;
-            transform: translateY(-2px);
-        }
-
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            padding: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-photo {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            flex-shrink: 0;
-        }
-
-        .hero-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .hero-content h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #2d3748;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #4a5568;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .skills-section, .projects-section {
-            padding: 3rem;
-            background: #f7fafc;
-        }
-
-        .skills-section h2, .projects-section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2d3748;
-            font-size: 2rem;
-        }
-
+        
         .skill {
-            margin-bottom: 1.5rem;
+            width: 100%;
+            max-width: 600px;
+            margin: 15px 0;
         }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #2d3748;
-        }
-
-        .skill-bar {
-            height: 25px;
-            background: #e2e8f0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            transition: width 1s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            color: white;
-            font-size: 0.9rem;
-        }
-
+        
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .project-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            color: white;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
         }
-
-        .project-card h3 {
-            margin-bottom: 0.5rem;
-            color: #2d3748;
-        }
-
-        .project-card p {
-            color: #718096;
-        }
-
-        footer {
-            background: #2d3748;
-            color: white;
+        
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 2rem;
         }
-
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
+        
+        /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
-            .hero {
+            .projects-grid {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .skills-section, .projects-section {
-                padding: 2rem 1rem;
+            
+            .project-card {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -251,30 +52,32 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">💻 WebDev</div>
-            <div class="student-name">Иван Петров</div>
+            <div class="header-logo">
+                <img src="images/logo.jpg" alt="Logo">
+                <div class="student-name">Лэ Дык Тхань Дат</div>
+            </div>
         </header>
 
         <nav>
             <ul>
-                <li><a href="#" class="active">Главная</a></li>
-                <li><a href="#projects">Проекты</a></li>
-                <li><a href="#diary">Дневник</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="pages/projects.html">Проекты</a></li>
+                <li><a href="pages/diary.html">Дневник</a></li>
+                <li><a href="pages/contacts.html">Контакты</a></li>
             </ul>
         </nav>
 
         <section class="hero">
-            <div class="hero-photo">👨‍💻</div>
+            <div class="hero-photo"></div>
             <div class="hero-content">
-                <h2>Привет! Я студент</h2>
-                <p>группы ЭФБО-99-99</p>
-                <p>Увлекаюсь веб-разработкой и созданием современных интерактивных приложений</p>
-                <a href="#" class="btn">📄 Скачать резюме</a>
+                <h2>Лэ Дык Тхань Дат</h2>
+                <p>группы ЭФБО-12-24</p>
+                <p class="hero-description">Увлекаюсь веб-разработкой и созданием современных интерфейсов</p>
+                <button class="btn" onclick="downloadResume()">📄 Скачать резюме</button>
             </div>
         </section>
 
-        <section class="skills-section">
+        <section class="skills-section" id="skills">
             <h2>Мои навыки</h2>
             
             <div class="skill">
@@ -283,7 +86,7 @@
                     <span>90%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%"></div>
+                    <div class="skill-progress" data-width="90"></div>
                 </div>
             </div>
 
@@ -293,7 +96,7 @@
                     <span>80%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 80%"></div>
+                    <div class="skill-progress" data-width="80"></div>
                 </div>
             </div>
 
@@ -303,44 +106,49 @@
                     <span>85%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 85%"></div>
+                    <div class="skill-progress" data-width="85"></div>
                 </div>
             </div>
 
+            <!-- ДОБАВЛЕН НОВЫЙ НАВЫК -->
             <div class="skill">
                 <div class="skill-name">
                     <span>React</span>
                     <span>60%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 60%"></div>
+                    <div class="skill-progress" data-width="60"></div>
                 </div>
             </div>
+
         </section>
 
-        <section class="projects-section">
+        <!-- ДОБАВЛЕНА СЕКЦИЯ ЛУЧШИХ ПРОЕКТОВ -->
+        <section class="best-projects-section">
             <h2>Лучшие проекты</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" onclick="openProject(1)">
                     <div class="project-icon">🌐</div>
                     <h3>Личный сайт</h3>
                     <p>HTML, CSS</p>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon">✅</div>
-                    <h3>Todo-приложение</h3>
-                    <p>JavaScript</p>
-                </div>
-                <div class="project-card">
+                
+                <div class="project-card" onclick="openProject(3)">
                     <div class="project-icon">🛒</div>
                     <h3>Интернет-магазин</h3>
                     <p>React</p>
+                </div>
+                
+                <div class="project-card" onclick="openProject(5)">
+                    <div class="project-icon">🎮</div>
+                    <h3>Игра</h3>
+                    <p>JavaScript</p>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2025 Иван Петров | <a href="#contacts">Контакты</a></p>
+            <p>&copy; 2025 Лэ Дык Тхань Дат | <a href="pages/contacts.html">Контакты</a></p>
         </footer>
     </div>
 
@@ -349,18 +157,12 @@
         window.addEventListener('load', function() {
             const progressBars = document.querySelectorAll('.skill-progress');
             progressBars.forEach(bar => {
-                const width = bar.style.width;
+                const width = bar.getAttribute('data-width');
                 bar.style.width = '0%';
                 setTimeout(() => {
-                    bar.style.width = width;
+                    bar.style.width = width + '%';
                 }, 100);
             });
-        });
-
-        // Обработка клика на кнопку скачивания резюме
-        document.querySelector('.btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Функция скачивания резюме будет реализована позже');
         });
 
         // Плавная прокрутка
@@ -373,6 +175,277 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        // Функция для скачивания резюме
+        function downloadResume() {
+            // Создаем PDF файл программно
+            const pdfContent = `
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 4 0 R
+>>
+>>
+/Contents 5 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+5 0 obj
+<<
+/Length 200
+>>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(РЕЗЮМЕ) Tj
+0 -40 Td
+/F1 18 Tf
+(Лэ Дык Тхань Дат) Tj
+0 -30 Td
+/F1 14 Tf
+(Группа: ЭФБО-12-24) Tj
+0 -30 Td
+(Студент университета) Tj
+0 -50 Td
+(НАВЫКИ:) Tj
+0 -25 Td
+(- HTML/CSS: 90%) Tj
+0 -25 Td
+(- JavaScript: 80%) Tj
+0 -25 Td
+(- Bootstrap: 85%) Tj
+0 -25 Td
+(- React: 60%) Tj
+0 -50 Td
+(КОНТАКТЫ:) Tj
+0 -25 Td
+(Email: student@edu.ru) Tj
+0 -25 Td
+(GitHub: Fryzux) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000279 00000 n 
+0000000371 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+485
+%%EOF
+            `;
+            
+            // Создаем Blob с PDF содержимым
+            const blob = new Blob([pdfContent], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            
+            // Создаем ссылку для скачивания
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Резюме_Лэ_Дык_Тхань_Дат.pdf';
+            a.style.display = 'none';
+            
+            // Добавляем в документ и кликаем
+            document.body.appendChild(a);
+            a.click();
+            
+            // Очищаем
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Показываем уведомление
+            showDownloadNotification();
+        }
+
+        // Функция для показа уведомления о скачивании
+        function showDownloadNotification() {
+            // Создаем элемент уведомления
+            const notification = document.createElement('div');
+            notification.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #4F7942;
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    animation: slideInRight 0.3s ease;
+                    border: 2px solid #D9B56D;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    max-width: 300px;
+                ">
+                    <strong>✅ Резюме скачано!</strong>
+                    <div style="font-size: 0.9em; margin-top: 5px;">
+                        Файл: Резюме_Лэ_Дык_Тхань_Дат.pdf
+                    </div>
+                </div>
+            `;
+            
+            // Добавляем стили для анимации
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOutRight {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            
+            if (!document.querySelector('#notification-styles')) {
+                style.id = 'notification-styles';
+                document.head.appendChild(style);
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Удаляем уведомление через 4 секунды
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 4000);
+        }
+
+        // Функция для открытия страницы проекта
+        function openProject(projectId) {
+            // Переход на страницу проектов
+            window.location.href = 'pages/projects.html';
+            
+            // Можно добавить localStorage для открытия конкретного проекта
+            localStorage.setItem('selectedProject', projectId);
+        }
+
+        // Альтернативная функция - создание текстового резюме
+        function downloadTextResume() {
+            const resumeContent = `
+РЕЗЮМЕ
+Лэ Дык Тхань Дат
+Группа: ЭФБО-12-24
+
+ОБРАЗОВАНИЕ:
+Студент университета
+
+НАВЫКИ:
+• HTML/CSS - 90%
+• JavaScript - 80% 
+• Bootstrap - 85%
+• React - 60%
+
+ПРОЕКТЫ:
+• Личный сайт (HTML/CSS)
+• Интернет-магазин (React)
+• Игра на Canvas (JavaScript)
+• Дашборд аналитики (React, Chart.js)
+
+КОНТАКТЫ:
+Email: student@edu.ru
+GitHub: Fryzux
+
+Дата обновления: ${new Date().toLocaleDateString('ru-RU')}
+            `;
+            
+            const blob = new Blob([resumeContent], { type: 'text/plain; charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Резюме_Лэ_Дык_Тхань_Дат.txt';
+            a.style.display = 'none';
+            
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showDownloadNotification('Текстовое резюме скачано!');
+        }
+
+        // Универсальная функция уведомления
+        function showDownloadNotification(message = '✅ Резюме скачано!') {
+            const notification = document.createElement('div');
+            notification.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #4F7942;
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    animation: slideInRight 0.3s ease;
+                    border: 2px solid #D9B56D;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    max-width: 300px;
+                ">
+                    <strong>${message}</strong>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 4000);
+        }
+
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Портфолио загружено успешно!');
+            
+            // Добавляем анимацию для карточек проектов
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
             });
         });
     </script>
