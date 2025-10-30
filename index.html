@@ -2,452 +2,323 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио студента</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Портфолио студента ЭФБО-12-24 - современная веб-разработка">
+    <title>Главная - Портфолио</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <style>
-        /* Дополнительные стили для центрирования */
-        .skills-section, .best-projects-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .skill {
-            width: 100%;
-            max-width: 600px;
-            margin: 15px 0;
-        }
-        
-        .projects-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            width: 100%;
-        }
-        
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 768px) {
-            .projects-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .project-card {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="page">
+        <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+        
+        <header class="header" role="banner">
             <div class="header-logo">
-                <img src="images/logo.jpg" alt="Logo">
-                <div class="student-name">Лэ Дык Тхань Дат</div>
+                <!-- Логотип с Retina поддержкой -->
+                <picture>
+                    <source srcset="images/icon@1x.png 1x, images/icon@2x.png 2x" type="image/png">
+                    <img src="images/icon@1x.png" 
+                         alt="Логотип портфолио студента" 
+                         width="60" 
+                         height="60" 
+                         loading="eager"
+                         class="logo-img responsive-image retina-image">
+                </picture>
+                <div class="student-name">Лэ Дык Тхань Дат<br>Студент группы ЭФБО-12-24</div>
             </div>
         </header>
 
-        <nav>
+        <!-- Навигация с Flexbox -->
+        <nav class="nav" role="navigation" aria-label="Основная навигация">
             <ul>
-                <li><a href="index.html" class="active">Главная</a></li>
-                <li><a href="pages/projects.html">Проекты</a></li>
-                <li><a href="pages/diary.html">Дневник</a></li>
-                <li><a href="pages/contacts.html">Контакты</a></li>
+                <li><a href="index.html" class="nav__link active" aria-current="page">Главная</a></li>
+                <li><a href="pages/projects.html" class="nav__link">Проекты</a></li>
+                <li><a href="pages/diary.html" class="nav__link">Дневник</a></li>
+                <li><a href="pages/contacts.html" class="nav__link">Контакты</a></li>
             </ul>
         </nav>
 
-        <section class="hero">
-            <div class="hero-photo"></div>
-            <div class="hero-content">
-                <h2>Лэ Дык Тхань Дат</h2>
-                <p>группы ЭФБО-12-24</p>
-                <p class="hero-description">Увлекаюсь веб-разработкой и созданием современных интерфейсов</p>
-                <button class="btn" onclick="downloadResume()">📄 Скачать резюме</button>
-            </div>
-        </section>
-
-        <section class="skills-section" id="skills">
-            <h2>Мои навыки</h2>
-            
-            <div class="skill">
-                <div class="skill-name">
-                    <span>HTML/CSS</span>
-                    <span>90%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>JavaScript</span>
-                    <span>80%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="80"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>Bootstrap</span>
-                    <span>85%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="85"></div>
-                </div>
-            </div>
-
-            <!-- ДОБАВЛЕН НОВЫЙ НАВЫК -->
-            <div class="skill">
-                <div class="skill-name">
-                    <span>React</span>
-                    <span>60%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="60"></div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- ДОБАВЛЕНА СЕКЦИЯ ЛУЧШИХ ПРОЕКТОВ -->
-        <section class="best-projects-section">
-            <h2>Лучшие проекты</h2>
-            <div class="projects-grid">
-                <div class="project-card" onclick="openProject(1)">
-                    <div class="project-icon">🌐</div>
-                    <h3>Личный сайт</h3>
-                    <p>HTML, CSS</p>
+        <!-- Hero секция с CSS Grid и responsive images -->
+        <main id="main" class="main" role="main">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero__greeting">Привет! 👋</h1>
+                    <p class="hero-description">
+                        Увлекаюсь веб-разработкой и созданием современных интерфейсов. 
+                        Использую HTML, CSS, JavaScript, React и другие современные технологии 
+                        для создания функциональных и красивых веб-приложений.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="pages/projects.html" class="button">
+                            <span>Узнать больше</span>
+                        </a>
+                        <a href="#" class="button button--secondary">
+                            <span>Скачать резюме</span>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="project-card" onclick="openProject(3)">
-                    <div class="project-icon">🛒</div>
-                    <h3>Интернет-магазин</h3>
-                    <p>React</p>
+                <div class="hero-photo">
+                    <!-- Адаптивное изображение для разных экранов -->
+                    <picture>
+                        <!-- Для широких экранов -->
+                        <source media="(min-width: 1200px)" srcset="images/wide-desktop.jpg">
+                        <!-- Для планшетов -->
+                        <source media="(min-width: 768px)" srcset="images/tablet.jpg">
+                        <!-- WebP для современных браузеров (портрет) -->
+                        <source media="(min-width: 480px)" srcset="images/portrait.webp" type="image/webp">
+                        <!-- JPEG фолбэк для портрета -->
+                        <source media="(min-width: 480px)" srcset="images/portrait.jpg">
+                        <!-- Для мобильных -->
+                        <img src="images/mobile.jpg" 
+                             alt="Фото студента Лэ Дык Тхань Дат" 
+                             width="400"
+                             height="400"
+                             loading="eager"
+                             class="student-photo responsive-image">
+                    </picture>
                 </div>
-                
-                <div class="project-card" onclick="openProject(5)">
-                    <div class="project-icon">🎮</div>
-                    <h3>Игра</h3>
-                    <p>JavaScript</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <footer>
-            <p>&copy; 2025 Лэ Дык Тхань Дат | <a href="pages/contacts.html">Контакты</a></p>
+            <!-- Демонстрация техник адаптивности -->
+            <section class="adaptive-techniques" aria-labelledby="techniques-heading">
+                <h2 id="techniques-heading" class="section-title">Техники адаптивности изображений</h2>
+                
+                <!-- Техника 1: Базовое адаптивное изображение -->
+                <div class="technique-section">
+                    <h3>1. Базовое адаптивное изображение</h3>
+                    <div class="image-container">
+                        <img src="images/landscape.jpg"
+                             alt="Красивый пейзаж с горами и озером"
+                             class="responsive-image"
+                             width="1200"
+                             height="800"
+                             loading="lazy"
+                             decoding="async">
+                    </div>
+                    <div class="explanation">
+                        <h4>Что происходит:</h4>
+                        <ul>
+                            <li>Изображение занимает 100% ширины контейнера</li>
+                            <li>Высота автоматически рассчитывается для сохранения пропорций</li>
+                            <li>Работает на всех устройствах</li>
+                            <li>Атрибуты width/height предотвращают смещение layout (CLS)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Техника 2: Object-fit свойства -->
+                <div class="technique-section">
+                    <h3>2. Object-fit свойства</h3>
+                    <div class="object-fit-demo">
+                        <div class="object-fit-item">
+                            <div class="object-fit-container">
+                                <img src="images/square.jpg"
+                                     alt="Cover пример - изображение заполняет контейнер с обрезкой краев"
+                                     class="object-fit-cover"
+                                     width="300"
+                                     height="200">
+                            </div>
+                            <span>object-fit: cover</span>
+                        </div>
+                        <div class="object-fit-item">
+                            <div class="object-fit-container">
+                                <img src="images/square.jpg"
+                                     alt="Contain пример - изображение вписывается полностью с полями"
+                                     class="object-fit-contain"
+                                     width="300"
+                                     height="200">
+                            </div>
+                            <span>object-fit: contain</span>
+                        </div>
+                        <div class="object-fit-item">
+                            <div class="object-fit-container">
+                                <img src="images/square.jpg"
+                                     alt="Fill пример - изображение растягивается с искажением пропорций"
+                                     class="object-fit-fill"
+                                     width="300"
+                                     height="200">
+                            </div>
+                            <span>object-fit: fill</span>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <h4>Что происходит:</h4>
+                        <ul>
+                            <li><strong>cover</strong> - заполняет контейнер, обрезая края</li>
+                            <li><strong>contain</strong> - вписывает полностью, могут быть поля</li>
+                            <li><strong>fill</strong> - растягивает, искажая пропорции</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Техника 3: Адаптивная галерея -->
+                <div class="technique-section">
+                    <h3>3. Адаптивная галерея</h3>
+                    <div class="gallery">
+                        <div class="gallery__item">
+                            <div class="gallery__image-container">
+                                <img src="images/landscape.jpg"
+                                     alt="Галерея 1 - Пейзаж"
+                                     class="gallery__image"
+                                     width="400"
+                                     height="300"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="gallery__item">
+                            <div class="gallery__image-container">
+                                <img src="images/portrait.jpg"
+                                     alt="Галерея 2 - Портрет"
+                                     class="gallery__image"
+                                     width="300"
+                                     height="400"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="gallery__item">
+                            <div class="gallery__image-container">
+                                <img src="images/gallery3.jpg"
+                                     alt="Галерея 3 - Архитектура"
+                                     class="gallery__image"
+                                     width="400"
+                                     height="300"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                        <div class="gallery__item">
+                            <div class="gallery__image-container">
+                                <img src="images/square.jpg"
+                                     alt="Галерея 4 - Квадратное изображение"
+                                     class="gallery__image"
+                                     width="300"
+                                     height="300"
+                                     loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <h4>Что происходит:</h4>
+                        <ul>
+                            <li><strong>На десктопах:</strong> 4 изображения в ряд</li>
+                            <li><strong>На планшетах:</strong> 2 изображения в ряд</li>
+                            <li><strong>На мобильных:</strong> 1 изображение в ряд</li>
+                            <li>Автоматическое перестроение сетки</li>
+                            <li>Все изображения адаптивные с правильными пропорциями</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция навыков -->
+            <section class="skills-section" aria-labelledby="skills-heading">
+                <h2 id="skills-heading" class="section-title">Мои навыки</h2>
+                
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>HTML, CSS</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-progress" data-progress="90" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>React</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-progress" data-progress="75" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-progress" data-progress="85" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span class="skill-percent">70%</span>
+                    </div>
+                    <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-progress" data-progress="70" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Go</span>
+                        <span class="skill-percent">60%</span>
+                    </div>
+                    <div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-progress" data-progress="60" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </section>
+
+                        <!-- Секция проектов с Grid -->
+            <section class="projects-preview" aria-labelledby="projects-heading">
+                <h2 id="projects-heading" class="section-title">Лучшие проекты</h2>
+                
+                <div class="projects-preview__grid">
+                    <article class="project-card">
+                        <div class="project-icon" aria-hidden="true">
+                            🌐
+                        </div>
+                        <h3 class="project-card__title">Сайт-портфолио</h3>
+                        <p class="project-card__description">HTML, CSS, Адаптивный дизайн</p>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon" aria-hidden="true">
+                            ⚛️
+                        </div>
+                        <h3 class="project-card__title">React-приложение</h3>
+                        <p class="project-card__description">React, Hooks, State Management</p>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon" aria-hidden="true">
+                            🎮
+                        </div>
+                        <h3 class="project-card__title">Интерактивная игра</h3>
+                        <p class="project-card__description">JavaScript, Canvas API</p>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon" aria-hidden="true">
+                            🛒
+                        </div>
+                        <h3 class="project-card__title">Интернет-магазин</h3>
+                        <p class="project-card__description">React, Redux, API Integration</p>
+                    </article>
+                </div>
+
+                <div class="projects-cta">
+                    <a href="pages/projects.html" class="button">Все проекты</a>
+                </div>
+            </section>
+
+        <!-- Футер -->
+        <footer class="footer" role="contentinfo">
+            <p>&copy; 2025 Лэ Дык Тхань Дат. Все права защищены.</p>
+            <p>
+                <a href="https://github.com/Fryzux" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+                <a href="pages/contacts.html">Контакты</a>
+            </p>
+            <p class="footer-note">Измените размер окна браузера чтобы увидеть адаптивность в действии!</p>
         </footer>
     </div>
 
-    <script>
-        // Анимация прогресс-баров при загрузке
-        window.addEventListener('load', function() {
-            const progressBars = document.querySelectorAll('.skill-progress');
-            progressBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = width + '%';
-                }, 100);
-            });
-        });
-
-        // Плавная прокрутка
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Функция для скачивания резюме
-        function downloadResume() {
-            // Создаем PDF файл программно
-            const pdfContent = `
-%PDF-1.4
-1 0 obj
-<<
-/Type /Catalog
-/Pages 2 0 R
->>
-endobj
-2 0 obj
-<<
-/Type /Pages
-/Kids [3 0 R]
-/Count 1
->>
-endobj
-3 0 obj
-<<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 612 792]
-/Resources <<
-/Font <<
-/F1 4 0 R
->>
->>
-/Contents 5 0 R
->>
-endobj
-4 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/BaseFont /Helvetica
->>
-endobj
-5 0 obj
-<<
-/Length 200
->>
-stream
-BT
-/F1 24 Tf
-50 750 Td
-(РЕЗЮМЕ) Tj
-0 -40 Td
-/F1 18 Tf
-(Лэ Дык Тхань Дат) Tj
-0 -30 Td
-/F1 14 Tf
-(Группа: ЭФБО-12-24) Tj
-0 -30 Td
-(Студент университета) Tj
-0 -50 Td
-(НАВЫКИ:) Tj
-0 -25 Td
-(- HTML/CSS: 90%) Tj
-0 -25 Td
-(- JavaScript: 80%) Tj
-0 -25 Td
-(- Bootstrap: 85%) Tj
-0 -25 Td
-(- React: 60%) Tj
-0 -50 Td
-(КОНТАКТЫ:) Tj
-0 -25 Td
-(Email: student@edu.ru) Tj
-0 -25 Td
-(GitHub: Fryzux) Tj
-ET
-endstream
-endobj
-xref
-0 6
-0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000279 00000 n 
-0000000371 00000 n 
-trailer
-<<
-/Size 6
-/Root 1 0 R
->>
-startxref
-485
-%%EOF
-            `;
-            
-            // Создаем Blob с PDF содержимым
-            const blob = new Blob([pdfContent], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-            
-            // Создаем ссылку для скачивания
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Резюме_Лэ_Дык_Тхань_Дат.pdf';
-            a.style.display = 'none';
-            
-            // Добавляем в документ и кликаем
-            document.body.appendChild(a);
-            a.click();
-            
-            // Очищаем
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            // Показываем уведомление
-            showDownloadNotification();
-        }
-
-        // Функция для показа уведомления о скачивании
-        function showDownloadNotification() {
-            // Создаем элемент уведомления
-            const notification = document.createElement('div');
-            notification.innerHTML = `
-                <div style="
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: #4F7942;
-                    color: white;
-                    padding: 15px 20px;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-                    z-index: 10000;
-                    animation: slideInRight 0.3s ease;
-                    border: 2px solid #D9B56D;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    max-width: 300px;
-                ">
-                    <strong>✅ Резюме скачано!</strong>
-                    <div style="font-size: 0.9em; margin-top: 5px;">
-                        Файл: Резюме_Лэ_Дык_Тхань_Дат.pdf
-                    </div>
-                </div>
-            `;
-            
-            // Добавляем стили для анимации
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideInRight {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOutRight {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(100%); opacity: 0; }
-                }
-            `;
-            
-            if (!document.querySelector('#notification-styles')) {
-                style.id = 'notification-styles';
-                document.head.appendChild(style);
-            }
-            
-            document.body.appendChild(notification);
-            
-            // Удаляем уведомление через 4 секунды
-            setTimeout(() => {
-                notification.style.animation = 'slideOutRight 0.3s ease';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            }, 4000);
-        }
-
-        // Функция для открытия страницы проекта
-        function openProject(projectId) {
-            // Переход на страницу проектов
-            window.location.href = 'pages/projects.html';
-            
-            // Можно добавить localStorage для открытия конкретного проекта
-            localStorage.setItem('selectedProject', projectId);
-        }
-
-        // Альтернативная функция - создание текстового резюме
-        function downloadTextResume() {
-            const resumeContent = `
-РЕЗЮМЕ
-Лэ Дык Тхань Дат
-Группа: ЭФБО-12-24
-
-ОБРАЗОВАНИЕ:
-Студент университета
-
-НАВЫКИ:
-• HTML/CSS - 90%
-• JavaScript - 80% 
-• Bootstrap - 85%
-• React - 60%
-
-ПРОЕКТЫ:
-• Личный сайт (HTML/CSS)
-• Интернет-магазин (React)
-• Игра на Canvas (JavaScript)
-• Дашборд аналитики (React, Chart.js)
-
-КОНТАКТЫ:
-Email: student@edu.ru
-GitHub: Fryzux
-
-Дата обновления: ${new Date().toLocaleDateString('ru-RU')}
-            `;
-            
-            const blob = new Blob([resumeContent], { type: 'text/plain; charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Резюме_Лэ_Дык_Тхань_Дат.txt';
-            a.style.display = 'none';
-            
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            showDownloadNotification('Текстовое резюме скачано!');
-        }
-
-        // Универсальная функция уведомления
-        function showDownloadNotification(message = '✅ Резюме скачано!') {
-            const notification = document.createElement('div');
-            notification.innerHTML = `
-                <div style="
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: #4F7942;
-                    color: white;
-                    padding: 15px 20px;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-                    z-index: 10000;
-                    animation: slideInRight 0.3s ease;
-                    border: 2px solid #D9B56D;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    max-width: 300px;
-                ">
-                    <strong>${message}</strong>
-                </div>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.animation = 'slideOutRight 0.3s ease';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            }, 4000);
-        }
-
-        // Инициализация при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Портфолио загружено успешно!');
-            
-            // Добавляем анимацию для карточек проектов
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.2}s`;
-            });
-        });
-    </script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
