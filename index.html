@@ -15,8 +15,8 @@
             <div class="header-logo">
                 <!-- Логотип с Retina поддержкой -->
                 <picture>
-                    <source srcset="images/icon@1x.png 1x, images/icon@2x.png 2x" type="image/png">
-                    <img src="images/icon@1x.png" 
+                    <source srcset="images/logo.jpg 1x, logo.jpg 2x" type="image/png">
+                    <img src="images/logo.jpg" 
                          alt="Логотип портфолио студента" 
                          width="60" 
                          height="60" 
@@ -51,8 +51,12 @@
                         <a href="pages/projects.html" class="button">
                             <span>Узнать больше</span>
                         </a>
-                        <a href="#" class="button button--secondary">
-                            <span>Скачать резюме</span>
+                        <a href="files/resume.pdf" 
+                        class="button button--secondary" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Открыть резюме в новой вкладке">
+                            <span>Посмотреть резюме</span>
                         </a>
                     </div>
                 </div>
@@ -61,7 +65,7 @@
                     <!-- Адаптивное изображение для разных экранов -->
                     <picture>
                         <!-- Для широких экранов -->
-                        <source media="(min-width: 1200px)" srcset="images/wide-desktop.jpg">
+                        <source media="(min-width: 1200px)" srcset="images/icon@2x.png">
                         <!-- Для планшетов -->
                         <source media="(min-width: 768px)" srcset="images/tablet.jpg">
                         <!-- WebP для современных браузеров (портрет) -->
