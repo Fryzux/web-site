@@ -1415,3 +1415,575 @@ textarea:focus {
     color: var(--accent-amber);
     text-decoration: underline;
 }
+/* Skip link для навигации с клавиатуры */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color, #2c5f2d);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Визуально скрытый текст для скринридеров */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Индикатор обязательного поля */
+.required-indicator {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* Подсказки для полей */
+.form-hint {
+    display: block;
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Четкий индикатор фокуса (WCAG 2.4.7, 2.4.13) */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #005fcc;
+    outline-offset: 2px;
+}
+
+/* Контраст для сообщений об ошибках (минимум 4.5:1) */
+.error-message {
+    color: #d32f2f;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    display: block;
+    font-weight: 500;
+}
+
+.form-group.error .form-group__input,
+.form-group.error .form-group__textarea {
+    border-color: #d32f2f;
+    border-width: 2px;
+    background-color: #fff5f5;
+}
+
+/* Сообщение об успехе */
+.success-message {
+    background-color: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+/* Улучшенная видимость кнопок */
+.btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn--primary {
+    background-color: #2c5f2d;
+    color: white;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+    background-color: #1e4620;
+}
+
+.btn--secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+    background-color: #545b62;
+}
+
+/* Стили для fieldset */
+.contact-form__fieldset {
+    border: 2px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.contact-form__legend {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0 8px;
+}
+
+/* Группы полей формы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group__input,
+.form-group__textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group__input:focus,
+.form-group__textarea:focus {
+    border-color: #2c5f2d;
+}
+
+/* Кнопка переключения темы с ARIA */
+.theme-toggle[aria-pressed="true"] .theme-toggle__icon::before {
+    content: '☀️';
+}
+
+/* Навигационная ссылка с aria-current */
+.nav__link[aria-current="page"] {
+    font-weight: bold;
+    border-bottom: 3px solid currentColor;
+}
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS - Улучшения доступности
+   ============================================ */
+
+/* Skip link для быстрой навигации */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    z-index: 10000;
+    padding: 12px 24px;
+    background-color: var(--accent-amber);
+    color: var(--forest-dark);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 0 0 8px 8px;
+    transition: top 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--forest-moss);
+    outline-offset: 2px;
+}
+
+/* Визуально скрытый контент для скринридеров */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Индикатор обязательного поля */
+.required-indicator {
+    color: #ff6b6b;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: help;
+    font-size: 1.1em;
+}
+
+/* ============================================
+   FORM ACCESSIBILITY - Доступность форм
+   ============================================ */
+
+/* Fieldset и Legend */
+.contact-form__fieldset {
+    border: 3px solid var(--forest-moss);
+    border-radius: 12px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-lg);
+    background-color: rgba(79, 121, 66, 0.15);
+}
+
+.contact-form__legend {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: var(--accent-amber);
+    padding: 0 16px;
+}
+
+/* Группы полей формы */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: var(--font-size-base);
+}
+
+/* Поля ввода */
+.form-group__input,
+.form-group__textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 3px solid var(--forest-moss);
+    border-radius: 8px;
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    background-color: var(--forest-dark);
+    color: var(--text-light);
+}
+
+.form-group__input::placeholder,
+.form-group__textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.form-group__input:hover,
+.form-group__textarea:hover {
+    border-color: var(--forest-light);
+}
+
+.form-group__input:focus,
+.form-group__textarea:focus {
+    border-color: var(--accent-amber);
+    background-color: rgba(79, 121, 66, 0.2);
+    outline: 3px solid var(--accent-amber);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(217, 181, 109, 0.2);
+}
+
+/* Textarea */
+.form-group__textarea {
+    resize: vertical;
+    min-height: 140px;
+    max-height: 400px;
+}
+
+/* Подсказки для полей */
+.form-hint {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    display: block;
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 8px;
+    min-height: 20px;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+/* Состояние ошибки для полей */
+.form-group.has-error .form-group__input,
+.form-group.has-error .form-group__textarea {
+    border-color: #ff6b6b;
+    border-width: 3px;
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.form-group.has-error .form-group__label {
+    color: #ff6b6b;
+}
+
+/* Визуальное выделение невалидных полей */
+.form-group__input[aria-invalid="true"],
+.form-group__textarea[aria-invalid="true"] {
+    border-color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23ff6b6b' d='M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+/* Сообщение об успешной отправке */
+.success-message {
+    background-color: rgba(119, 163, 92, 0.3);
+    border: 3px solid var(--success-green);
+    border-radius: 12px;
+    color: var(--text-light);
+    padding: 20px 24px;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    box-shadow: 0 4px 15px rgba(119, 163, 92, 0.4);
+}
+
+.success-message p {
+    margin: 0;
+}
+
+/* ============================================
+   FORM BUTTONS - Кнопки формы
+   ============================================ */
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-start;
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.btn--primary {
+    background: linear-gradient(135deg, var(--forest-moss) 0%, var(--forest-light) 100%);
+    color: var(--text-light);
+    border: 2px solid var(--accent-amber);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 48px;
+    min-width: 140px;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+    background: linear-gradient(135deg, var(--accent-amber) 0%, var(--accent-gold) 100%);
+    color: var(--forest-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217, 181, 109, 0.4);
+}
+
+.btn--secondary {
+    background: rgba(79, 121, 66, 0.3);
+    color: var(--text-light);
+    border: 2px solid var(--forest-moss);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 48px;
+    min-width: 140px;
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+    background: rgba(79, 121, 66, 0.5);
+    border-color: var(--accent-amber);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   CONTACT INFO - Информация о контактах
+   ============================================ */
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list__item {
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(79, 121, 66, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-list__item:hover {
+    background: rgba(79, 121, 66, 0.3);
+    transform: translateX(5px);
+}
+
+.contact-list__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 32px;
+    text-align: center;
+}
+
+.contact-list__link {
+    color: var(--accent-amber);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-list__link:hover,
+.contact-list__link:focus {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+/* ============================================
+   NAVIGATION ACCESSIBILITY - Доступность навигации
+   ============================================ */
+
+.nav__link[aria-current="page"] {
+    font-weight: bold;
+    border-bottom: 3px solid var(--accent-amber);
+    color: var(--accent-amber);
+    background: rgba(217, 181, 109, 0.2);
+}
+
+/* Кнопка переключения темы */
+.theme-toggle {
+    background: rgba(79, 121, 66, 0.3);
+    border: 2px solid var(--forest-moss);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+    background: var(--accent-amber);
+    border-color: var(--accent-amber);
+    transform: rotate(180deg);
+}
+
+.theme-toggle__icon {
+    font-size: 1.5rem;
+}
+
+.theme-toggle[aria-pressed="true"] .theme-toggle__icon::before {
+    content: '☀️';
+}
+
+/* ============================================
+   IMPROVED FOCUS INDICATORS - Улучшенные индикаторы фокуса
+   ============================================ */
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus {
+    outline: 3px solid var(--accent-amber);
+    outline-offset: 3px;
+}
+
+/* Улучшенная видимость для темных фонов */
+.nav a:focus {
+    outline-color: var(--accent-amber);
+    background: rgba(217, 181, 109, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE ACCESSIBILITY - Адаптивная доступность
+   ============================================ */
+
+@media (max-width: 768px) {
+    .contact-form__fieldset {
+        padding: var(--spacing-md);
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn--primary,
+    .btn--secondary {
+        width: 100%;
+    }
+    
+    .contact-list__item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE - Режим высокой контрастности
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    .form-group__input,
+    .form-group__textarea {
+        border-width: 4px;
+    }
+    
+    .btn--primary,
+    .btn--secondary {
+        border-width: 3px;
+    }
+    
+    .required-indicator {
+        font-weight: 900;
+    }
+}
+
+/* ============================================
+   PRINT STYLES - Стили для печати
+   ============================================ */
+
+@media print {
+    .skip-link,
+    .theme-toggle,
+    .form-actions {
+        display: none !important;
+    }
+    
+    .contact-form__fieldset {
+        border: 2px solid #000;
+        page-break-inside: avoid;
+    }
+}
