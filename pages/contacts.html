@@ -111,7 +111,7 @@
 </head>
 <body>
     <!-- Skip link для клавиатурной навигации -->
-    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+    <a href="#main-content" class="skip-link">Перейти к основному содержимому</a>
     
     <div class="page">
         <header class="header" role="banner">
@@ -224,10 +224,10 @@
                             </fieldset>
 
                             <div class="form-actions">
-                                <button type="submit" class="btn btn--primary">
+                                <button type="submit" class="btn btn--primary" aria-label="Отправить сообщение">
                                     Отправить
                                 </button>
-                                <button type="reset" class="btn btn--secondary">
+                                <button type="reset" class="btn btn--secondary" aria-label="Очистить форму">
                                     Очистить
                                 </button>
                             </div>
@@ -239,15 +239,19 @@
                         <h2>Другие способы связи</h2>
                         <div class="contact-item">
                             <span class="contact-icon" aria-hidden="true">📧</span>
-                            <a href="mailto:le.d2@edu.mirea.ru">example@email.com</a>
+                            <a href="mailto:le.d2@edu.mirea.ru" aria-label="Отправить письмо на example@email.com">
+                                example@email.com
+                            </a>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon" aria-hidden="true">📱</span>
-                            <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+                            <a href="tel:+79001234567" aria-label="Позвонить по номеру +7 900 123 45 67">
+                                +7 (900) 123-45-67
+                            </a>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon" aria-hidden="true">🐙</span>
-                            <a href="https://github.com/Fryzux" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/Fryzux" target="_blank" rel="noopener noreferrer" aria-label="Открыть GitHub — откроется в новом окне">
                                 GitHub
                                 <span class="visually-hidden">(откроется в новом окне)</span>
                             </a>
