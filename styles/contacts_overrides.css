@@ -92,3 +92,53 @@
         border-radius: 10px !important;
     }
 }
+/* --- Контрастный жёлтый для контактов — WCAG OK --- */
+
+/* Ссылки */
+.contacts-section .contact-item a {
+    color: #FFD764 !important; /* яркий жёлтый */
+    font-weight: 600;
+}
+
+.contacts-section .contact-item a:hover,
+.contacts-section .contact-item a:focus {
+    color: #FFFFFF !important;
+}
+
+/* Заголовки */
+.contacts-section h2,
+.contacts-section .contact-info h2 {
+    color: #FFD764 !important;
+}
+
+/* Labels */
+.contacts-section label {
+    color: #FFD764 !important;
+}
+
+/* Контейнеры — фон темнее для контраста */
+.contacts-section .contact-form-container,
+.contacts-section .contact-info {
+    background: #0C1F15 !important; /* чуть темнее */
+}
+
+/* Поля ввода */
+.contacts-section input,
+.contacts-section textarea {
+    background: #163826 !important;
+    border: 2px solid #FFD764 !important;
+    color: #FFFFFF !important;
+}
+
+/* Кнопки — жёлтые */
+.contacts-section .btn--primary {
+    background: #FFD764 !important;
+    border: 2px solid #FFD764 !important;
+    color: #0F291C !important;
+}
+
+.contacts-section .btn--primary:hover {
+    background: #FFE08A !important; /* светлее */
+    color: #0F291C !important;
+}
+
